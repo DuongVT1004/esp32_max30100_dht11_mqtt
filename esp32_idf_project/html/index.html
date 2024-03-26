@@ -1,0 +1,28 @@
+<!DOCTYPE HTML><html>
+<head>
+  <title>WEATHER DASHBOARD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+<h1>Nhap thong tin wifi</h1>
+<label>SSID: </label>
+<input type="text" id="ssid"><br><br>
+<label>PASS: </label>
+<input type="text" id="pass"><br><br>
+
+<button onclick="sendwifi()">Send</button>
+
+<script>
+var xhttp1 = new XMLHttpRequest();
+
+function sendwifi() {
+    var ssid = document.getElementById("ssid").value;
+    var pass = document.getElementById("pass").value;
+    xhttp1.open("POST", "/wifiinfo", true);
+    xhttp1.send(ssid + '/' + pass + '/');
+  }
+</script>
+</body>
+</html>
